@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "copy code",
+  "description": "Copy code from stackoverflow",
+  "content_scripts": [
+    {
+      "matches": ["*://*.stackoverflow.com/*"],
+      "js": ["extension_script.js"]
+    }
+  ],
+  "permissions": ["sidePanel", "tabs"],
+
+  "background": {
+    "service_worker": "service_worker/background_worker.js"
+  },
+
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "icons": {
+    "48": "image/icon-48.png",
+    "94": "image/icon-94.png"
+  }
+}
